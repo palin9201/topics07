@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <script>
+  // 等待頁面加載完成後再設置事件
+  document.addEventListener('DOMContentLoaded', function () {
+      // 當頁面滾動時觸發
+      window.addEventListener('scroll', function() {
+          toggleScrollButton();
+      });
+
+      // 點擊按鈕後滾動回頁面頂部
+      document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+          window.scrollTo({
+              top: 0,
+              behavior: "smooth" // 平滑滾動效果
+          });
+      });
+  });
+
+  // 判斷滾動位置，控制按鈕顯示或隱藏
+  function toggleScrollButton() {
+      const btn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          btn.style.display = "block"; // 滾動後顯示按鈕
+      } else {
+          btn.style.display = "none"; // 頂部時隱藏按鈕
+      }
+  }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新頁面</title>
+    <style>
+        #container {margin: 0 auto;width: 1024px;padding-top: 80px;}
+        td {text-align: left;}
+        .r_img{border-radius: 50%;width: 300px;height: 300px;}
+        .r_img1{border-radius:20px;}
+        .r_img2{border-radius:10px;}
+        .large_font{font-size: 46px;}
+        .large_font1{font-size: 42px;}
+        .large_font2{font-size: 30px;}
+        .large_font3{font-size: 25px;}
+        .r_img:hover{rotate: 10deg;opacity: 50%}
+        age: url('05.jpg'); }body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* 左右對齊 */
+            align-items: center;
+            background-color: #D8A7A7;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .nav-links a:hover {
+            background-color: #F3D7CA;
+            border-radius: 5px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #D8A7A7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        display: none; /* 初始狀態隱藏 */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+
+        .scrollToTopBtn:hover {
+            background-color: #D8A7A7;
+        }
+        .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* 圖片之間的間距 */
+    }
+
+    .image-row img {
+      width: 300px; /* 可自行調整大小 */
+      height: auto;
+    }
+        /* ✅ 手機適配 */
+        @media screen and (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; padding: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 8px; font-size: 14px; }
+            .logo { font-size: 16px; }
+            .large_font { font-size: 8vw; }
+            .large_font1 { font-size: 5vw; }
+            .large_font2 { font-size: 4.5vw; }
+            .large_font3 { font-size: 4vw; }
+            .r_img { width: 80%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="logo">人工智慧應用於心律不整螺旋波相位奇異點之偵測</div>
+        <div class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="main1.html">研究目的</a>
+        <a href="main2.html">資料收集</a>
+        <a href="main3.html">研究方法</a>
+        <a href="main4.html">預測結果</a>
+        <a href="main5.html">結論</a>
+        <a href="main6.html">參考文獻</a> 
+    </div>
+    </div>
+<div id="container">
+    <table>
+        <tr>
+            <td colspan="2">
+            <h1 class="large_font2"><br>資料前處理 </h1>
+            <hr style="border: 1px solid black; width: 100%;">
+            <h1 class="large_font3">1.圖片與標註同步縮放與位置調整</h1>
+            <p class="large_font3"><span style="color: blue;">目的是將圖片和對應的XML標籤檔案進行尺寸同步調整</span></p>                
+            <p class="large_font3">(確保標籤框（Bounding Box）在縮放後的圖片中仍能精確地標示物品的位置)</p>
+            <div style="text-align: center;"><img src="08.jpg" class="r_img1"> </div>
+            <p class="large_font3">●<span style="color: blue;">XML</span>標註框同步調整(更新XML檔案中size標籤，確保尺寸符合新圖片大小)</p>
+            <p class="large_font3">●縮放後的圖片和更新後的標籤檔案分別儲存到指定的輸出目錄</p>
+
+            <h1 class="large_font3"><br>2.標註格式轉換為YOLO & 資料分割</h1>
+            
+            <p class="large_font3"><span style="color: blue;">用於yolov7模型的訓練前準備</span></p>
+            <p class="large_font3">●轉換標註格:<br>
+            將 VOC 格式的標註資料轉換為 YOLO 格式，以適應YOLOv7訓練所需的資料格式。</p>
+            <p class="large_font3">●<span style="color: blue;">資料分割</span>(樣本數:6089張)</p>
+            <p class="large_font3">樣本劃分—8:1:1=訓練集（4871張）：驗證集（609張）：測試集（609張）</p>
+            <p class="large_font3">●生成訓練、驗證、測試集列表(執行程式<span style="color: blue;">voc_annotation.py</span>產生以下文件):</p>
+            <p class="large_font3"><span style="color: blue;">Train.txt</span>: 記錄訓練集圖片的路徑</p>
+            <p class="large_font3"><span style="color: blue;">Val.txt</span>: 記錄驗證集圖片的路徑</p>
+            <p class="large_font3"><span style="color: blue;">Trainval.txt</span>: 記錄訓練集和驗證集圖片的路徑</p>
+            <p class="large_font3"><span style="color: blue;">Test.txt</span>: 記錄測試集圖片的路徑</p>
+            <p class="large_font3" font-weight: bold ;>這些文件用於告訴 YOLOV7 訓練程式讀取哪些圖片來進行訓練和驗證。</p>
+
+            <h1 class="large_font2"><br>模型訓練</h1>
+            <h1 class="large_font3"><br>程式架構：YOLOv7 目標檢測</h1>
+            <hr style="border: 1px solid black; width: 100%;">
+            <p class="large_font3">●深度學習框架:使用 <span style="color: blue;">TensorFlow </span>和<span style="color: blue;"> Keras </span>作為框架</p>
+            <p class="large_font3"><br>●<span style="color: blue;">參數配置</span></p>
+            <p class="large_font3">○ Init_lr：初始學習率設為5e-4<br>
+            ○ Freeze_Train = True 啟用凍結訓練，加速訓練過程並提升模型的穩定性<br>
+            ○ Freeze_batch_size：凍結訓練的批次大小設為 16<br>
+            ○ Unfreeze_batch_size：解除凍結後的批次大小設為 8<br>
+            ○ optimizer_type = 選擇 Adam 優化器，適合快速收斂<br>
+            ○ 數據增強（Mosaic 與 Mixup）：增加數據多樣性以提升模型的泛化能力<br>
+            ○ score_threshold：檢測的信心分數閾值設為 0.4</p>
+            <p class="large_font3"><br>●模型結構</p>
+            <p class="large_font3">設置模型大小phi 值 : 設為l表示大模型，適合高精確度需求與計算資源需求也較高的場景</p>
+            <p class="large_font3">-phi值決定 YOLO 模型的版本與架構大小</p>
+            <p class="large_font3"><br>●模型構建與訓練</p>
+            <p class="large_font3">使用 yolo_body 搭建 YOLOv7 模型，並根據給定的標註和類別數量進行自定義配置</p>
+            <div style="text-align: center;"><img src="10.jpg"> </div>
+            <p class="large_font3">●加載預訓練權重：</p>
+            <p class="large_font3">通過 load_weights 使用預訓練模型加速訓練並適配自定義數據集，提升初期性能</p>
+            <div style="text-align: center;"><img src="11.jpg"> </div>
+            <p class="large_font3">●訓練時自動調整學習率：</p>
+            <p class="large_font3">使用動態學習率調整優化訓練過程，提高收斂速度和穩定性。</p>
+            <div style="text-align: center;"><img src="12.jpg"> </div>
+            <p class="large_font3">●模型保存與評估</p>
+            <p class="large_font3">訓練過程中定期保存模型:在訓練過程中保存性能最佳的模型權重</p>
+            <div style="text-align: center;"><img src="14.jpg" > </div>
+            <div style="text-align: center;"><img src="15.jpg" > <br></div>
+            <div style="text-align: center;"><br><img src="16.jpg" > <img src="17.jpg" ></div>
+
+            <h1 class="large_font3">●觀察<span style="color: blue;">Loss</span>結果：</h1>
+            <p class="large_font3">○損失值在初始階段急劇下降，顯示模型快速學習數據特徵<br>
+            ○隨著 Epoch 增加，損失曲線趨於平穩，表示模型逐步收斂<br>
+            ○訓練損失與驗證損失接近，表明模型沒有明顯過擬合，學習效果良好<br></p>
+            <h1 class="large_font3">●觀察<span style="color: blue;">mAP</span>(Mean Average Precision)結果：</h1>
+            <p class="large_font3">○ mAP 是在所有類別各自的 AP 之後，再取平均，因此能綜合反映模型對所有類別的整體偵測能力。
+            若 mAP 越高，表示模型對多數類別的偵測都相對精準<br>
+            ○ mAP 隨著 Epoch 增加而上升，表示模型準確率逐步提高<br>
+            ○ mAP 上升的趨勢反映了模型有效學習了數據集的特徵，並達到了較好的性能</p>
+            
+            <div style="text-align: center;"><br><img src="18.jpg" > <img src="19.jpg" ></div>
+            <p style="text-align: center;" class="large_font3">●AP介紹</p>
+
+            <h1 class="large_font2"><br>訓練模型並測試模型預測應用設定</h1>
+            <hr style="border: 1px solid black; width: 100%;">
+            <p class="large_font3">用途:從圖像中檢測物體並顯示或保存檢測結果</p>
+            <p class="large_font3">1檢測模型參數:修改權重檔案路徑和類別名稱(ps)檔案路徑</p>
+            <div style="text-align: center;"><img src="21.jpg" ></div>
+            <p class="large_font3">●設定圖片大小</p>
+            <div style="text-align: center;"><img src="22.jpg" ></div>
+            <p class="large_font3">●設置檢測框標準</p>
+            <div style="text-align: center;"><img src="23.jpg" ></div>
+            <p class="large_font3">2.檢測圖片3.圖像繪製</p>
+            <div style="text-align: center;"><img src="20.jpg" ></div>
+
+            <h1 class="large_font2"><br>模型預測應用</h1>
+            <hr style="border: 1px solid black; width: 100%;">
+            <p class="large_font3"><br>●指定測試的模式<img src="26.jpg" ></p>
+            <p class="large_font3">●圖片檢測</p>
+            <p class="large_font3">●指定是否在單張圖片預測後對目標進行截取 & 進行目標的計數<img src="27.jpg" ></p>
+            <p class="large_font3">●檢測結果</p>
+            <div style="text-align: center;"><img src="28.jpg" ></div>
+            <p class="large_font3">輸入檢測圖片的路徑</p>
+            <div style="text-align: center;"><br><img src="29.jpg" ></div>
+            <div style="text-align: center;"><br><img src="30.jpg" ></div>
+            <div style="text-align: center;"><br><img src="31.jpg" ></div>
+            <p class="large_font3">●呈現結果-></p>
+            <div style="text-align: center;"><br><img src="32.jpg" ></div>
+            <h1 class="large_font2"><br>模型績效評估: Mean Average Precision(mAP)</h1>
+            <hr style="border: 1px solid black; width: 100%;">
+            <p class="large_font3">○ m：針對所有類別的平均精準度（AP）取平均值。<br>
+            ○ A：計算單一類別的 Precision-Recall 曲線下面積，得出該類別的平均精準度（AP）。<br>
+            ○ P：預測結果中正確檢測的比例。</p>
+            <p class="large_font3"><br>●用途：衡量物件檢測模型的整體精確性</p>
+            <p class="large_font3">●主要任務：<br>1.取得結果預測 <br> 2.取得真實框 <br> 3.計算mAP值(平均精度均值)<br>  4.可視化結果</p>
+<div id="container"> 
+    <table >
+        <tr>
+            <td colspan="2">
+                <font class="large_font3">模型效能:<br>
+                ●mAP:61.65% ●Recall:45.24%
+                ●Precision:75.00%
+                ●F1 score:0.56
+                ●Confidence:60~75%<br></font>
+                <div style="text-align: center;"><img src="43.jpg" ></td></div>
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+           
+                
+        </td>
+               
+                
+            </td>
+           
+
+
+            </tr>
+</div>
+        <button id="scrollToTopBtn" class="scrollToTopBtn" style="text-align: center;">↑ 返回頂部</button>
+</body>
+</html>

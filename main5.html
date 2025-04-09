@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <script>
+  // 等待頁面加載完成後再設置事件
+  document.addEventListener('DOMContentLoaded', function () {
+      // 當頁面滾動時觸發
+      window.addEventListener('scroll', function() {
+          toggleScrollButton();
+      });
+
+      // 點擊按鈕後滾動回頁面頂部
+      document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+          window.scrollTo({
+              top: 0,
+              behavior: "smooth" // 平滑滾動效果
+          });
+      });
+  });
+
+  // 判斷滾動位置，控制按鈕顯示或隱藏
+  function toggleScrollButton() {
+      const btn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          btn.style.display = "block"; // 滾動後顯示按鈕
+      } else {
+          btn.style.display = "none"; // 頂部時隱藏按鈕
+      }
+  }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新頁面</title>
+    <style>
+        #container {margin: 0 auto;width: 1024px;padding-top: 80px;}
+        td {text-align: left;}
+        .r_img{border-radius: 50%;width: 300px;height: 300px;}
+        .r_img1{border-radius:20px;}
+        .large_font{font-size: 46px;}
+        .large_font1{font-size: 42px;}
+        .large_font2{font-size: 30px;}
+        .large_font3{font-size: 25px;}
+        .r_img:hover{rotate: 10deg;opacity: 50%}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* 左右對齊 */
+            align-items: center;
+            background-color: #D8A7A7;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .nav-links a:hover {
+            background-color: #F3D7CA;
+            border-radius: 5px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .video-container {
+            display: flex;
+            justify-content: space-between; /* 讓影片均勻分布 */
+            gap: 20px; /* 影片之間的間距 */
+            margin-top: 30px;
+        }
+         .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 40px; /* 圖片之間的間距 */
+      margin-top: 40px;
+    }
+
+    .image-item {
+      text-align: center;
+    }
+
+    .image-item img {
+      width: 500px;
+      height: auto;
+      border-radius: 12px; /* 圓角，可刪除 */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影，可刪除 */
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+        /* 設定影片的寬高 */
+        video {
+            width: 500px;
+            height: 250px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #D8A7A7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        display: none; /* 初始狀態隱藏 */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+
+        .scrollToTopBtn:hover {
+            background-color: #D8A7A7;
+        }
+        /* ✅ 手機適配 */
+        @media screen and (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; padding: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 8px; font-size: 14px; }
+            .logo { font-size: 16px; }
+            .large_font { font-size: 8vw; }
+            .large_font1 { font-size: 5vw; }
+            .large_font2 { font-size: 4.5vw; }
+            .large_font3 { font-size: 4vw; }
+            .r_img { width: 80%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="logo">人工智慧應用於心律不整螺旋波相位奇異點之偵測</div>
+        <div class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="main1.html">研究目的</a>
+        <a href="main2.html">資料收集</a>
+        <a href="main3.html">研究方法</a>
+        <a href="main4.html">預測結果</a>
+        <a href="main5.html">結論</a>
+        <a href="main6.html">參考文獻</a> 
+    </div>
+    </div>
+<div id="container">
+    <table>
+        <tr>
+            <td colspan="2">
+                <h1 class="large_font2"><br>問題與挑戰</h1>
+                <hr style="border: 1px solid black; width: 100%;">
+                <p class="large_font2"><br>1.GPU經常爆滿(加入會依需求分配記憶體之指令)</p>
+                <div style="text-align: center;"><br><img src="35.jpg" ></div>
+                <p class="large_font2"><br>2.圖片像素過低</p>
+                <div style="text-align: center;"><br><img src="38.jpg" ></div>
+                <p class="large_font3" style="text-align: center;">訓練過程會將像素統一至288*288</p>
+                <p class="large_font2"><br>3.預測效能低</p>
+                <p class="large_font2"><br>採用人工標註可能會出現錯誤或遺漏等問題，後續我們將藉由數學模型或影片預測的結果，對初步標註框進行自動調整，再由人工進行最後確認。</p>
+                <div class="image-row">
+                <div class="image-item">
+                  <img src="48.jpg" alt="圖片1">
+                  <div class="large_font3">●人工標註位置</div>
+                </div>
+                <div class="image-item">
+                  <img src="49.jpg" alt="圖片2">
+                  <div class="large_font3">●模型預測結果</div>
+                </div>
+              </div>
+
+                <p class="large_font2"><br>4.圖片訓練異常</p>
+                <p class="large_font3"><br>統一圖片大小後與原始標註資料不一致，我們所擷取的phase map圖片大小尺寸不一, 經過處理後圖片大小統一為288*288畫素, 但我們是對原來尺寸不一的圖片進行標註, 因而標註資料與統一大小後的圖片不一致, 結果造成模型訓練失敗. 經過處理後, 我們成功訓練出偵測PS的AI模型.</p>
+                <p class="large_font2"><br>5.影片畫質過低</p>
+                <div class="video-container">
+                <div style="text-align: center;"><img src="40.jpg" class="r_img1" width="350" height="350"></div>
+                <div style="text-align: center;"><img src="41.jpg" class="r_img1" width="500" height="350"></div>
+</div>
+                <div style="text-align: center;"><br><img src="46.jpg" class="r_img1" ></div>
+
+                 <h1 class="large_font2">結論 </h1>
+                <hr style="border: 1px solid black; width: 100%;">
+                <div style="text-align: center;"><img src="09.jpg" class="r_img1"></div>
+                <div style="text-align: center;"><img src="47.jpg" class="r_img1"></div>
+                
+
+                <p class="large_font3"><br>本專題利用物件偵測模型<span style="color: blue;">YOLOv7、YOLOv8</span>以及<span style="color: blue;">物件追蹤模型DeepSORT</span>，讓我們能夠快速且準確地從phase map圖片以及影片中標註出相位奇異點並進行後續的追蹤，這對心律不整的診斷、電燒治療規劃和病理機制研究都有很大的幫助。<br>
+
+    <br>研究過程中，我們解決了圖片尺寸不一致、標註資料格式混亂等問題，並透過資料分割和數據增強技術提升模型的學習效果。我們目前的結果透過模型預測影片觀察，效果還不錯，可自動標示出心臟的相位奇異點，並進行後續的物件追蹤，雖然目前模型評估後的效能還有改進空間，但主要由於當初標註的答案有所疏漏，未來修正標注資料後相信我們的模型效能會非常好。</p>
+            </td>
+            
+            </tr>
+</div>
+        <button id="scrollToTopBtn" class="scrollToTopBtn" style="text-align: center;">↑ 返回頂部</button>
+</body>
+</html>

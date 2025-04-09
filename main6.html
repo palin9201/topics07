@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新頁面</title>
+    <style>
+        #container {margin: 0 auto;width: 1024px;padding-top: 80px;}
+        td {text-align: left;}
+        .r_img{border-radius: 50%;width: 300px;height: 300px;}
+        .r_img1{border-radius:20px;}
+        .large_font{font-size: 46px;}
+        .large_font1{font-size: 42px;}
+        .large_font2{font-size: 30px;}
+        .large_font3{font-size: 25px;}
+        .r_img:hover{rotate: 10deg;opacity: 50%}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* 左右對齊 */
+            align-items: center;
+            background-color: #D8A7A7;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .nav-links a:hover {
+            background-color: #F3D7CA;
+            border-radius: 5px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #D8A7A7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        display: none; /* 初始狀態隱藏 */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+
+        .scrollToTopBtn:hover {
+            background-color: #D8A7A7;
+        }
+        /* ✅ 手機適配 */
+        @media screen and (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; padding: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 8px; font-size: 14px; }
+            .logo { font-size: 16px; }
+            .large_font { font-size: 8vw; }
+            .large_font1 { font-size: 5vw; }
+            .large_font2 { font-size: 4.5vw; }
+            .large_font3 { font-size: 4vw; }
+            .r_img { width: 80%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="logo">人工智慧應用於心律不整螺旋波相位奇異點之偵測</div>
+        <div class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="main1.html">研究目的</a>
+        <a href="main2.html">資料收集</a>
+        <a href="main3.html">研究方法</a>
+        <a href="main4.html">預測結果</a>
+        <a href="main5.html">結論</a>
+        <a href="main6.html">參考文獻</a> 
+    </div>
+    </div>
+<div id="container">
+    <table>
+        <tr>
+            <td colspan="2">
+            <h1 class="large_font2">參考文獻</h1>
+            <hr style="border: 1px solid black; width: 100%;"> 
+            <p class="large_font3">●<a href="https://github.com/WongKinYiu/yolov7" target="_blank">WongKinYiu, "YOLOv7, "GitHub, https://github.com/WongKinYiu/yolov7,2022.</a></p>
+            <p class="large_font3">●<a href="https://github.com/bubbliiiing/yolov7-tiny-keras" target="_blank">Bubbliiiing,"YOLOv7-Tiny-Keras, "GitHub, https://github.com/bubbliiiing/yolov7-keras, 2022.</a></p>
+            <p class="large_font3">●<a href="https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.782176/full" target="_blank">Jan Lebert, Namita Ravi, Flavio H. Fenton, and Jan Christoph, "Rotor Localization and Phase Mapping of Cardiac Excitation Waves Using Deep Neural Networks,"Frontiers in Physiology, https://www.frontiersin.org/journals/physiology/articles/10.3389/fphys.2021.782176/full,2021.</a></p>
+            <p class="large_font3">●<a href="https://my.oschina.net/u/876354/blog/1927351" target="_blank">雪餅，【AI 实战】手把手教你训练自己的目标检测模型（SSD 篇），OSCHINA.NET， https://my.oschina.net/u/876354/blog/1927351，2018。</a></p>
+            <p class="large_font3">●<a href="https://reurl.cc/A2oXQY" target="_blank">Tommy Huang，深度學習系列: 什麼是 AP/mAP? ， Medium，https://reurl.cc/A2oXQY，2018。</a></p>
+            <p class="large_font3">●<a href="https://reurl.cc/04dWXK" target="_blank">蔡嘉一醫師(2024)，心律不整的中醫診治，台中榮民總醫院傳統醫學部，https://reurl.cc/04dWXK。</a></p>
+            <p class="large_font3">●<a href="https://blog.csdn.net/weixin_45736855/article/details/143504947" target="_blank">AI小楊(2024).【目标追踪1】基于YOLOv8+DeepSort的目标追踪-YOLOv8-DeepSORT-Object-Tracking模型训练自己的数据集的史诗级详细教程。CSDN。取自：https://blog.csdn.net/weixin_45736855/article/details/143504947</a></p>
+            <p class="large_font3">●<a href="https://blog.csdn.net/weixin_45736855/article/details/143489362" target="_blank">AI小楊(2024).【數据集制作】一、基于YOLOv8的YOLO格式数据集制作詳細教程-数据集標註(YOLOv8-DeepSORT-Object-Tracking目标跟踪训练自己的数据集之数据集标注)。CSDN。取自：https://blog.csdn.net/weixin_45736855/article/details/143489362</a></p>
+            <p class="large_font3">●<a href="https://blog.csdn.net/qq_50811028/article/details/132684305" target="_blank">qq_50811028(2023).DeepSort訓練自己的數據集。CSDN。取自：https://blog.csdn.net/qq_50811028/article/details/132684305</a></p>
+            <p class="large_font3">●<a href="https://zhuanlan.zhihu.com/p/90835266" target="_blank">
+            可樂(2019).目标跟踪初探（DeepSORT）。知乎。取自：https://zhuanlan.zhihu.com/p/90835266</a></p>
+            <p class="large_font3">●<a href="https://blog.csdn.net/lbr15660656263/article/details/140422243" target="_blank">
+            地里的小趴菜(2024).目标跟踪初探（DeepSORT）。CSDN。取自：https://blog.csdn.net/lbr15660656263/article/details/140422243</a></p>
+            <p class="large_font3">●<a href="https://github.com/Qidian213/deep_sort_yolov3" target="_blank">
+            Qidian213(2018).deep_sort_yolov3.GitHub.取自：https://github.com/Qidian213/deep_sort_yolov3</a></p>
+            <p class="large_font3">●<a href="https://github.com/theAIGuysCode/yolov3_deepsort" target="_blank">
+            theAIGuysCode(2025).yolov3_deepsort.GitHub.取自：https://github.com/theAIGuysCode/yolov3_deepsort</a></p>
+            <p class="large_font3">●<a href="https://github.com/theAIGuysCode/yolov4-deepsort" target="_blank">
+            theAIGuysCode(2025).yolov3_deepsort.GitHub.取自：https://github.com/theAIGuysCode/yolov4-deepsort</a></p>
+            <p class="large_font3">●<a href="https://github.com/qqwweee/keras-yolo3" target="_blank">
+            qqwweee(2018).keras-yolo3.GitHub.取自：https://github.com/qqwweee/keras-yolo3</a></p>
+            <p class="large_font3">●<a href="https://pedin024.medium.com/deep-sort%E8%AB%96%E6%96%87%E7%AD%86%E8%A8%98-simple-online-and-realtime-tracking-with-a-deep-association-metric-c6a9f01392ec" target="_blank">
+            Patty Wu(2021).Deep Sort論文筆記：SIMPLE ONLINE AND REALTIME TRACKING WITH A DEEP ASSOCIATION METRIC.Medium。取自：https://pedin024.medium.com/deep-sort%E8%AB%96%E6%96%87%E7%AD%86%E8%A8%98-simple-online-and-realtime-tracking-with-a-deep-association-metric-c6a9f01392ec</a></p>
+            </td>
+            <td>
+                
+            </td>
+            </tr>
+</div>
+        <button id="scrollToTopBtn" class="scrollToTopBtn" style="text-align: center;">↑ 返回頂部</button>
+</body>
+</html>

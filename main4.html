@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head><script>
+  // 等待頁面加載完成後再設置事件
+  document.addEventListener('DOMContentLoaded', function () {
+      // 當頁面滾動時觸發
+      window.addEventListener('scroll', function() {
+          toggleScrollButton();
+      });
+
+      // 點擊按鈕後滾動回頁面頂部
+      document.getElementById("scrollToTopBtn").addEventListener("click", function() {
+          window.scrollTo({
+              top: 0,
+              behavior: "smooth" // 平滑滾動效果
+          });
+      });
+  });
+
+  // 判斷滾動位置，控制按鈕顯示或隱藏
+  function toggleScrollButton() {
+      const btn = document.getElementById("scrollToTopBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+          btn.style.display = "block"; // 滾動後顯示按鈕
+      } else {
+          btn.style.display = "none"; // 頂部時隱藏按鈕
+      }
+  }
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新頁面</title>
+    <style>
+        #container {margin: 0 auto;width: 1024px;padding-top: 80px;}
+        td {text-align: left;}
+        .r_img{border-radius: 50%;width: 300px;height: 300px;}
+        .r_img1{border-radius:50px;width: 600px;height: 600px;}
+        .large_font{font-size: 46px;}
+        .large_font1{font-size: 42px;}
+        .large_font2{font-size: 30px;}
+        .large_font3{font-size: 25px;}
+        .r_img:hover{rotate: 10deg;opacity: 50%}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* 左右對齊 */
+            align-items: center;
+            background-color: #D8A7A7;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        .nav-links a:hover {
+            background-color: #F3D7CA;
+            border-radius: 5px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .scrollToTopBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #D8A7A7;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        display: none; /* 初始狀態隱藏 */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        }
+
+        .scrollToTopBtn:hover {
+            background-color: #D8A7A7;
+        }
+        .video-container {
+          width: 100%;
+    text-align: center;
+    margin-top: 30px;
+      }
+      .image-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* 圖片之間的間距 */
+    }
+
+    .image-row img {
+      width: 300px; /* 可自行調整大小 */
+      height: auto;
+    }
+      body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* 禁止橫向滾動 */
+    padding-bottom: 200px; /* 增加底部空間讓頁面可以正常滾動 */
+}
+        /* ✅ 手機適配 */
+        @media screen and (max-width: 768px) {
+            .navbar { flex-direction: column; text-align: center; padding: 10px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .nav-links a { padding: 8px; font-size: 14px; }
+            .logo { font-size: 16px; }
+            .large_font { font-size: 8vw; }
+            .large_font1 { font-size: 5vw; }
+            .large_font2 { font-size: 4.5vw; }
+            .large_font3 { font-size: 4vw; }
+            .r_img { width: 80%; height: auto; }
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="logo">人工智慧應用於心律不整螺旋波相位奇異點之偵測</div>
+        <div class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="main1.html">研究目的</a>
+        <a href="main2.html">資料收集</a>
+        <a href="main3.html">研究方法</a>
+        <a href="main4.html">預測結果</a>
+        <a href="main5.html">結論</a>
+        <a href="main6.html">參考文獻</a> 
+    </div>
+    </div>
+<div id="container">
+    <table>
+        <tr>
+            <td >
+              <h1 class="large_font2"><br>研究成果</h1>
+              <hr style="border: 1px solid black; width: 100%;">
+              <p class="large_font3"><br>可以自動大量快速標註 phase map 圖片與影片中的相位奇異點(Phase Singularity, PS)
+              <div style="text-align: center;"><br><img src="34.jpg" class="r_img1"> <br></div>
+              <h1 class="large_font2"><br>進階 - 物件追蹤</h1>
+              <hr style="border: 1px solid black; width: 100%;">
+              <p class="large_font3">研究進行流程</p>
+              <div class="image-row"><br><img src="44.jpg" class="r_img1"> 
+              <img src="45.jpg" class="r_img1"> <br></div> 
+              <h1 class="large_font3"><br>偵測物件-YOLOv8</h1>
+                <p class="large_font3">●<span style="color: blue;">精度提升</span><br>
+                YOLOv8 在 COCO 等資料集上的表現，比 v7 更準，對小物體與邊緣遮擋的辨識也更好。<br>
+                ●<span style="color: blue;">速度快，支援更好</span><br>
+                YOLOv8 精度提升，推論速度仍然很快，適合即時應用；並且支援 ONNX、TensorRT、iOS、Android 。<br>
+                ●<span style="color: blue;">架構簡化，易於整合</span><br>
+                v8 採用 PyTorch 原生實作， 更乾淨、模組化，方便跟 DeepSORT 整合。<br>
+                ●<span style="color: blue;">內建功能強</span>:
+                YOLOv8 本身內建了訓練、驗證、推論、匯出等功能。<br>
+                ●<span style="color: blue;">總結</span>:
+                YOLOv8 比 YOLOv7 更準、更快、更好整合，是目前做目標追蹤的首選。</p>
+                <h1 class="large_font3"><br>卡爾曼濾波器與匈牙利演算法介紹</h1>
+                <p class="large_font3">●<span style="color: blue;">卡爾曼濾波器</span><br>
+                  1.用途：預測ps在下一幀的位置<br>
+                  2.作用：  a.目標預測  b.狀態更新<br>
+                  3.讓ps移動更順、不會突然消失<br>
+
+                ●<span style="color: blue;">匈牙利演算法</span><br>
+                  1.用途：找出預測位置以及特徵和偵測框之間最好的配對組合<br>
+                  2.作用：確保每個 ID 都能正確對上對應的ps<br>
+                  3.減少 ID 跳號、錯配的情況</p>
+                  <h1 class="large_font2"><br>追蹤結果呈現</h1>
+                <div class="video-container">
+    <video  autoplay muted playsinline>
+      <source src="8.mp4" type="video/mp4">
+      您的瀏覽器不支援影片播放。
+    </video>
+  </div>
+            </td>
+            <td>
+                
+            </td>
+            </tr>
+<div style="text-align: center;"><img src="02.gif" width="1000" height="500"></div>
+</div>
+
+
+        <button id="scrollToTopBtn" class="scrollToTopBtn" style="text-align: center;">↑ 返回頂部</button>
+</body>
+</html>
